@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap')
+
+\:root
+    --gap: 24px
+    --full: minmax(var(--gap), 1fr)
+    --content-maxwidth: #{$content-maxwidth}
+    --content: min(var(--content-maxwidth), 100% - var(--gap) * 2)
+    --breakout: minmax(0, 190px)
+
+    --section-gap: 80px
+
+    --red: #D9102C
+    --gray: #5D6D7E
+    --dark-gray: #2C3E50
+    --light-gray: #F8F9FA
+    +s(m)
+        --gap: 20px
+
+*
+    font-family: "Inter", sans-serif
+    font-optical-sizing: auto
+    line-height: 150%
+    text-size-adjust: 100%
+    font-weight: 300
+    +f(12px, 16px)
+
+html, body
+    scroll-behavior: smooth
+    appearance: none
+    overflow-x: clip
+    background: var(--light-gray)
+    color: var(--dark-gray)
+
+section, header, footer
+    width: 100%
+    position: relative
+    display: grid
+    grid-template-columns: [full-start] var(--full) [breakout-start] var(--breakout) [content-start] var(--content) [content-end] var(--breakout) [breakout-end] var(--full) [full-end]
+    & > *
+        grid-column: content
+    .full
+        grid-column: full
+    .breakout
+        grid-column: breakout
+
+h1, h2, h3, h4, h5
+    font-family: "Noto Sans", sans-serif
+    b
+        color: var(--red)
+        font-size: inherit
+        font-weight: inherit
+        line-height: inherit
+
+h1
+    font-weight: 300
+    line-height: 109%
+    text-transform: uppercase
+    color: var(--gray)
+    +f(86px, 128px)
+
+h2
+    font-weight: 400
+    line-height: 120%
+    +f(36px, 48px)
+
+h3
+    font-weight: 500
+    font-size: 32px
+    line-height: 120%
+    +f(20px, 32px)
+
+h4
+    font-weight: 400
+    line-height: 130%
+    +f(20px, 24px)
+
+div.swiper
+    user-select: none
+
+div.swiper-pagination
+    display: grid
+    grid-auto-flow: column
+    grid-auto-columns: max-content
+    grid-gap: 5px
+    span
+        display: block
+        width: 5px
+        height: 5px
+        background: var(--gray)
+        border-radius: 5px
+        transition: all 0.3s
+        opacity: 0.4
+        &.swiper-pagination-bullet-active
+            width: 23px
+            background: var(--red)
+            opacity: 1
