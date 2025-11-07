@@ -1,5 +1,5 @@
 <template lang="pug">
-section.about
+section.advantages#advantages
     div.container
         div.title
             span Наши преимущества
@@ -24,12 +24,14 @@ section.about
 </template>
 
 <style lang="sass" scoped>
-section.about
+section.advantages
     margin-top: var(--section-gap)
     margin-bottom: var(--section-gap)
+    scroll-margin-top: var(--section-gap)
     +s(m)
         margin-top: 40px
         margin-bottom: 40px
+        scroll-margin-top: 40px
 
     div.title
         display: grid

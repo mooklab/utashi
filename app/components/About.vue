@@ -1,5 +1,5 @@
 <template lang="pug">
-section.about
+section.about#about
     div.container
         div.title
             span О бренде
@@ -17,9 +17,11 @@ section.about
 section.about
     margin-top: calc(var(--section-gap)*2)
     margin-bottom: var(--section-gap)
+    scroll-margin-top: var(--section-gap)
     +s(m)
         margin-top: 70px
         margin-bottom: 40px
+        scroll-margin-top: 70px
     div.title
         display: grid
         align-items: center

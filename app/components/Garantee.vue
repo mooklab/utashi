@@ -1,5 +1,5 @@
 <template lang="pug">
-section.garantee
+section.garantee#garantee
     div.container
         img(src="/images/five.svg", alt="Гарантия качества")
         div.text

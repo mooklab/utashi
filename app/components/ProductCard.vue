@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue';
+import ProductArrow from '~/assets/icons/product_arrow.svg'
 
 const props = defineProps({
     title: String,
@@ -58,7 +59,7 @@ div.product
     a(@click="toggleList()").button 
         span(v-if="!showSpecs") Технические характеристики
         span(v-if="showSpecs") Скрыть
-        img(src="/images/product_arrow.svg", :class="{opened: showSpecs}")
+        ProductArrow(:class="{opened: showSpecs}")
 </template>
 
 <style lang="sass" scoped>
@@ -149,6 +150,7 @@ div.product
         border-radius: 10px
         height: 55px
         padding: 16px
+        transition: background 0.3s
         +s(m)
             height: 40px
             padding: 0 10px
@@ -156,8 +158,18 @@ div.product
         span
             font-weight: 600
             color: var(--red)
-        img
+        svg
             transition: all 0.3s
+            path
+                transition: all 0.3s
             &.opened
                 transform: rotate(180deg)
+
+        &:hover
+            background: var(--red)
+            span
+                color: white
+            :deep(svg)
+                path
+                    stroke: white
 </style>

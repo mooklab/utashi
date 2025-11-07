@@ -12,10 +12,10 @@ footer
 
 <style lang="sass" scoped>
 footer
-    margin-top: var(--section-gap)
+    margin-top: 20px
     margin-bottom: 30px
     +s(m)
-        margin-top: 40px
+        margin-top: 20px
         margin-bottom: 20px
 
     div.wrap

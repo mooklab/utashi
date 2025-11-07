@@ -4,13 +4,15 @@ import { Pagination, Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import ProductCard from './ProductCard.vue';
 
+import SwiperArrow from '~/assets/icons/swiper-arrow.svg'
+
 const prev = ref(null)
 const next = ref(null)
 
 </script>
 
 <template lang="pug">
-section.products
+section.products#products
     div.container
         div.title
             span Наши продукты
@@ -19,8 +21,8 @@ section.products
         div.content
             h2 #[b Тщательно продуманные решения] <br/>для различных потребностей
             div.swiper-navigation
-                div(ref="prev").arrow: img(src="/images/swiper-arrow.svg")
-                div(ref="next").arrow: img(src="/images/swiper-arrow.svg")
+                div(ref="prev").arrow: SwiperArrow
+                div(ref="next").arrow: SwiperArrow
             swiper(
                 ref="swiper"
                 :modules="[Pagination, Navigation]",
@@ -42,7 +44,9 @@ section.products
 section.products
     margin-top: var(--section-gap)
     margin-bottom: var(--section-gap)
+    scroll-margin-top: var(--section-gap)
     +s(m)
+        scroll-margin-top: 40px
         margin-top: 40px
         margin-bottom: 50px
     div.title
@@ -101,13 +105,24 @@ section.products
             border-radius: 6px
             width: 28px
             height: 28px
-            svg
-                width: 4px
-                height: 8px
-                path
-                    fill: var(--red)
+            transition: all 0.3s
+
             &:first-child
                 transform: rotate(180deg)
+
+            &:hover
+                background: var(--red)
+                border: 1px solid var(--red)
+
+                :deep(svg)
+                    path
+                        stroke: white
+
+
+            &.swiper-button-disabled
+                opacity: 0.2
+                pointer-events: none
+
 
     :deep(div.swiper-pagination)
         justify-content: center

@@ -87,6 +87,7 @@ header
             line-height: 130%
             color: var(--gray)
             +f(12px, 18px)
+            transition: color 0.3s
             +s(m)
                 align-items: end
             &::after
@@ -101,6 +102,8 @@ header
                 opacity: 0.2
                 +s(m)
                     display: none
+            &:hover
+                color: var(--red)
 
     div.menu
         display: none
