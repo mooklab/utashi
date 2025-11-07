@@ -1,5 +1,5 @@
 <script setup>
-import { Pagination } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { main } from '~/assets/data';
 </script>
@@ -8,8 +8,10 @@ import { main } from '~/assets/data';
 section.main
     div.container
         swiper(
-            :modules="[Pagination]",
+            :modules="[Pagination, Autoplay]",
             :auto-height="true",
+            :autoplay="{ delay: 5000, disableOnInteraction: false }",
+            :loop="true",
             pagination
         )
             swiper-slide(v-for="(slide, index) in main", :key="index")

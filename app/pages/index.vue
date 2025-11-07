@@ -1,8 +1,6 @@
 <script setup>
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import '@/assets/styles/_reset.sass'
-import '@/assets/styles/_common.sass'
 import 'swiper/css';
 import Header from '~/components/Header.vue';
 import Main from '~/components/Main.vue';
