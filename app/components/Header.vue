@@ -10,12 +10,12 @@ function toggleMenu() {
 <template lang="pug">
 header
     div.container
-        div.logotype: img(src="/images/logotype.svg", alt="Utashi")
+        NuxtLink(to="/").logotype: img(src="/images/logotype.svg", alt="Utashi")
         menu(:class="{opened: showMenu}")
-            a(href="#about") О бренде
-            a(href="#advantages") Преимущества
-            a(href="#products") Продукты
-            a(href="#garantee") Гарантия
+            NuxtLink(to="#about") О бренде
+            NuxtLink(to="#advantages") Преимущества
+            NuxtLink(to="#products") Продукты
+            NuxtLink(to="#garantee") Гарантия
         div(@click="toggleMenu()").menu
             img(src="/images/menu.svg", alt="Меню", v-if="!showMenu")
             img(src="/images/cross.svg", alt="Закрыть", v-if="showMenu")
@@ -39,7 +39,7 @@ header
         grid-template-columns: max-content 1fr max-content
         grid-gap: 10px
 
-    div.logotype
+    a.logotype
         display: grid
         align-items: center
         justify-items: center

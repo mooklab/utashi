@@ -27,11 +27,10 @@ section.advantages#advantages
 section.advantages
     margin-top: var(--section-gap)
     margin-bottom: var(--section-gap)
-    scroll-margin-top: var(--section-gap)
+    scroll-margin-top: 240px
     +s(m)
         margin-top: 40px
         margin-bottom: 40px
-        scroll-margin-top: 40px
 
     div.title
         display: grid

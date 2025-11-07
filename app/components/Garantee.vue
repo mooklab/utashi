@@ -12,6 +12,7 @@ section.garantee#garantee
 section.garantee
     margin-top: var(--section-gap)
     margin-bottom: var(--section-gap)
+    scroll-margin-top: 240px
     +s(m)
         margin-top: 40px
         margin-bottom: 40px

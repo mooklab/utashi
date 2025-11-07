@@ -44,9 +44,8 @@ section.products#products
 section.products
     margin-top: var(--section-gap)
     margin-bottom: var(--section-gap)
-    scroll-margin-top: var(--section-gap)
+    scroll-margin-top: 240px
     +s(m)
-        scroll-margin-top: 40px
         margin-top: 40px
         margin-bottom: 50px
     div.title

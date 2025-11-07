@@ -17,11 +17,10 @@ section.about#about
 section.about
     margin-top: calc(var(--section-gap)*2)
     margin-bottom: var(--section-gap)
-    scroll-margin-top: var(--section-gap)
+    scroll-margin-top: 240px
     +s(m)
         margin-top: 70px
         margin-bottom: 40px
-        scroll-margin-top: 70px
     div.title
         display: grid
         align-items: center
